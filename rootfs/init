@@ -1,0 +1,13 @@
+#!/bin/sh
+
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+mount -t devtmpfs devtmpfs /dev
+
+export PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
+
+echo
+echo "Welcome to CoreX"
+echo
+
+exec setsid cttyhack /bin/sh
