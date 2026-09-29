@@ -6,7 +6,7 @@ cd
 cd CoreX/rootfs
 
 echo "Building rootfs.img..."
-find . -print0 | cpio -0 -o -H newc > ../CoreX/boot/rootfs.img
+find . -print0 | cpio -0 -o -H newc | zstd -15 -T0 -f -o ../CoreX/boot/rootfs.img
 
 cd ..
 

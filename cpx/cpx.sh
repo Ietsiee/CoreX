@@ -41,6 +41,11 @@ case "$ACTION" in
         echo "[*] Loading $PKG.cpx..."
         . "/tmp/$PKG.cpx"
 
+        echo "[+] Dependencies: $Deps"
+        for DEP in $(echo "$deps" | tr ',' ' '); do
+            cpx install "$DEP"
+        done
+
         mkdir -p "/tmp/$package"
 
         cd "/tmp/$package"

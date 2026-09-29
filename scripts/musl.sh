@@ -11,6 +11,8 @@ wget -q -O musl.tgz "https://musl.cc/x86_64-linux-musl-native.tgz"
 echo "Extracting musl..."
 tar -xf musl.tgz
 mv x86_64-linux-musl-native musl
+rm -rf musl/usr
+rm -rf musl/x86_64-linux-musl
 rm -f musl.tgz
 
 echo "Installing musl..."
