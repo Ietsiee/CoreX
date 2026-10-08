@@ -6,7 +6,7 @@ cd
 cd CoreX/rootfs
 
 echo "Creating rootfs..."
-mkdir -p bin sbin proc sys dev tmp lib usr var
+mkdir -p bin sbin proc sys dev tmp lib usr var mnt
 
 echo "Creating cpx to rootfs..."
 cp ../cpx/cpx.sh bin/cpx
@@ -24,6 +24,6 @@ chmod 1777 tmp
 cd usr
 
 echo "Creating /usr to rootfs..."
-mkdir -p bin sbin lib share
+mkdir -p bin sbin lib share lib64 libexec local local/sbin local/share local/bin
 
 echo "Rootfs build complete"

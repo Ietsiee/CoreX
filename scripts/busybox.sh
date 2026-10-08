@@ -5,6 +5,8 @@ cd
 
 cd CoreX
 
+rm -rf busybox
+
 echo "Cloning busybox..."
 git clone -q --depth 1 --branch 1_38_0 --single-branch https://git.busybox.net/busybox.git busybox
 
@@ -14,9 +16,9 @@ echo "Configuring busybox..."
 cp ../software/busybox/.config .config
 
 echo "Building busybox..."
-make CC=gcc -j$(nproc)
+make CC=musl-gcc -j$(nproc)
 
 echo "Installing busybox..."
-make install CONFIG_PREFIX=../rootfs
+make CC=musl-gcc CONFIG_PREFIX=../rootfs install
 
 echo "BusyBox building complete"

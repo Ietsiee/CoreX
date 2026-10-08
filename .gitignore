@@ -1,7 +1,6 @@
 /e2fsprogs/
 /busybox/
 /linux/
-/make/
 /musl/
 
 /rootfs/*
@@ -10,11 +9,8 @@
 
 linux.tar.xz
 e2fsprogs.tar.xz
-make.tar.gz
-musl.tgz
+musl.tar.xz
 
 bzImage
 rootfs.img
 CoreX.iso
-
-TODO

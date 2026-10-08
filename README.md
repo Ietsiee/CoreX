@@ -15,7 +15,7 @@ To install **CoreX**, you can choose between building the **ISO** yourself see [
 ## Building ISO
 To build the **ISO**, you need to install these **build dependencies:**
 ```
-git wget tar gzip grub cpio xorriso make musl-gcc gcc bc flex bison zstd
+git curl wget tar gzip grub cpio xorriso make musl-gcc gcc bc flex bison zstd linux-headers linux-api-headers kernel-headers-musl
 ```
 
 To start the **setup** run: ```curl -fsSL https://raw.githubusercontent.com/Ietsiee/CoreX/main/scripts/setup.sh | sh```
