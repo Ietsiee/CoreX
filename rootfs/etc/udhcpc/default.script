@@ -1,1 +1,19 @@
 #!/bin/sh
+case "$1" in
+    deconfig)
+        ip addr flush dev "$interface"
+        ;;
+    bound|renew)
+        ip addr flush dev "$interface"
+        prefix=$(ipcalc -p "$ip" "$subnet" 2>/dev/null | cut -d= -f2)
+        [ -n "$prefix" ] || prefix=24
+        ip link set "$interface" up
+        ip addr add "$ip/$prefix" dev "$interface" || exit 1
+        for r in $router; do
+            ip route replace default via "$r" dev "$interface"
+            break
+        done
+        ;;
+esac
+
+exit 0
